@@ -22,7 +22,7 @@ const RootQuery = new GraphQLObjectType({
   name: "RootQueryTpye",
   fields: {
     book: {
-      type: BootType,
+      type: BookType,
       args: {id: {type: GraphQLString}},
       resolve(parent, args){
         return _.find(books, {id: args.id})
