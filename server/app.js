@@ -1,11 +1,11 @@
 const express = require("express")
 const app = express()
-const graphQLHTTP = require('express-graphql')
+const { graphqlHTTP } = require('express-graphql');
 const schema = require("./schema/schema")
 
-app.use("/graphQL", graphQLHTTP({
-  schema: schema
-}))
+app.use('/graphql', graphqlHTTP({
+  schema:schema,
+}));
 
 app.listen(4000, () => {
   console.log("App listening on port 400")
