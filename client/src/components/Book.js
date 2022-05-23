@@ -1,8 +1,9 @@
 
-function Book() {
+function Book({book}) {
+  console.log(book.name)
   return (
     <div className="Book">
-      <h2>Book</h2>
+      <h2>{book.name}</h2>
     </div>
   );
 }
