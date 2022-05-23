@@ -1,5 +1,6 @@
 import './App.css';
 import BookList from './components/BookList'
+import AddBook from './components/AddBook'
 import React, {useState, useEffect} from "react"
 import {
   ApolloClient,
@@ -14,23 +15,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-// client
-//   .query({
-//     query: gql`
-//       query GetRates {
-//         rates(currency: "USD") {
-//           currency
-//         }
-//       }
-//     `
-//   })
-//   .then(result => console.log(result));
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
         <BookList></BookList>
+        <AddBook></AddBook>
       </div>
     </ApolloProvider>
   );
