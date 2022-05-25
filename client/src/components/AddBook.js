@@ -9,10 +9,16 @@ function AddBook() {
   const [genre, setGenre] = useState("")
 
   const { data } = useQuery(getAuthors);
+  
+  const submitForm = (event) => {
+    event.preventDefault();
+    setName("")
+    setGenre("")
+  }
 
   console.log(data)
   if (data) return (
-    <form id="add-book">
+    <form id="add-book" onSubmit={event => submitForm(event)}>
 
     <div className="field">
       <label>Book name:</label>
@@ -35,7 +41,7 @@ function AddBook() {
       </select>
     </div>
 
-    <button></button>
+    <button >+</button>
 
     </form>
   );
