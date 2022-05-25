@@ -7,13 +7,15 @@ import React, {useState, useEffect} from "react"
 function AddBook() {
   const [name, setName] = useState("")
   const [genre, setGenre] = useState("")
-
+  const [authorId, setAuthorId] = useState("62882b6ff869cd97418c4aab")
   const { data } = useQuery(getAuthors);
-  
+
   const submitForm = (event) => {
+    console.log(name, genre, authorId)
     event.preventDefault();
     setName("")
     setGenre("")
+    setAuthorId("")
   }
 
   console.log(data)
@@ -32,7 +34,7 @@ function AddBook() {
 
     <div className="field">
       <label>Author:</label>
-      <select>
+      <select onChange={event => setAuthorId(event.target.value)}>
         {data.authors.map((author) => {
         return(
         <option key={author.id} value={author.id}>{author.name}</option>
