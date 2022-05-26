@@ -16,7 +16,7 @@ function BookList() {
     if (error) return <p>Error </p>;
     if(data)
       return (
-        <div className="BookList">
+        <div className="container mx-auto px-4">
         <h1>BookList</h1>
         <ul>
         {console.log(data)}
