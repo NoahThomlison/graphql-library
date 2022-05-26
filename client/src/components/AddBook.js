@@ -3,7 +3,7 @@ import {
   useMutation,
   gql
 } from "@apollo/client";
-import {getAuthors, addBookMutation} from '../queries/queries'
+import {getAuthors, addBookMutation, getBookQuery} from '../queries/queries'
 import React, {useState, useEffect} from "react"
 
 function AddBook() {
@@ -20,7 +20,8 @@ function AddBook() {
           name,
           genre,
           authorId
-      }
+      },
+      refetchQueries: [{query: getBookQuery}]
   })
     setName("")
     setGenre("")
