@@ -1,20 +1,26 @@
 import {
   useQuery,
+  useLazyQuery
 } from "@apollo/client";
+import {getBookDetailsQuery} from '../queries/queries'
 
-import {getBookQuery} from '../queries/queries'
+function BookDetails({id}) {
+	const { loading, error, data } = useQuery(getBookDetailsQuery, {
+		variables: { id: id }
+	});  
+  if (loading) return(<h1>Loading</h1>)
+  if (error) {
+    console.log(error)
+  }
+  if (data) {
+    console.log(data)
+    return(<h1>data</h1>)
+  }
 
-function BookDetails() {
-  const { loading, error, data } = useQuery(getBookQuery);
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error </p>;
-    if(data)
-      return (
-        <div className="book-details">
-          <p>Output details</p>
-        </div>
-      );
-
+  return (
+    <div className="BookDetails">
+    </div>
+  );
 }
 
 export default BookDetails;
