@@ -4,9 +4,13 @@ import {
 } from "@apollo/client";
 
 function Book({book, setId}) {
+  console.log(book)
   return (
     <div className="Book">
-      <li onClick={() => setId(book.id)}>{book.name}</li>
+      <div onClick={() => setId(book.id)}>
+        <h1>{book.name}</h1>
+      </div>
+
     </div>
   );
 }
