@@ -16,21 +16,25 @@ function BookList() {
     if (error) return <p>Error </p>;
     if(data)
       return (
-        <div className="container mx-auto px-4">
-        <h1>BookList</h1>
-        <ul>
-        {console.log(data)}
-        {data.books.map((book) => {
-          return(
-            <Book setId={setId} book={book}></Book>
-          )
-        })}
-        </ul>
-        <BookDetails id={id}></BookDetails>
+        <div className="mx-auto container ">
+          <div className="container main">
+            <h1 className="text-blue-600">BookList</h1>
+            <ul>
+            {console.log(data)}
+            <div className="booklist">
+              {data.books.map((book) => {
+                return(
+                  <Book setId={setId} book={book}></Book>
+                )
+              })}
+            </div>
+            </ul>
+          </div>
+        <div className='bookDetails'>
+          <BookDetails id={id}></BookDetails>
         </div>
-
+        </div>
       );
-
 }
 
 export default BookList;
