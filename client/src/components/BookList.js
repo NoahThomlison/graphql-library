@@ -19,13 +19,13 @@ function BookList() {
         <div className="mx-auto container ">
           <div className="container main rounded">
             <h1 className="text-blue-600 bg-sky-500/50">BookList</h1>
-            <ul className="booklist mx-auto container ">
+            <div className="booklist mx-auto container ">
               {data.books.map((book) => {
                 return(
                   <Book setId={setId} book={book}></Book>
                 )
               })}
-           </ul>
+           </div>
         </div>
         <div className='bookDetails'>
           <BookDetails id={id}></BookDetails>
