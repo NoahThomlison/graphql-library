@@ -17,19 +17,16 @@ function BookList() {
     if(data)
       return (
         <div className="mx-auto container ">
-          <div className="container main">
-            <h1 className="text-blue-600">BookList</h1>
-            <ul>
-            {console.log(data)}
-            <div className="booklist">
+          <div className="container main rounded">
+            <h1 className="text-blue-600 bg-sky-500/50">BookList</h1>
+            <ul className="booklist mx-auto container ">
               {data.books.map((book) => {
                 return(
                   <Book setId={setId} book={book}></Book>
                 )
               })}
-            </div>
-            </ul>
-          </div>
+           </ul>
+        </div>
         <div className='bookDetails'>
           <BookDetails id={id}></BookDetails>
         </div>

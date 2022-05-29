@@ -46,11 +46,10 @@
 }
 
 .booklist{
-  display: flex;
   width: 90vw;
 }
 
 .book{
-  width: 25%;
+  width: 100px;
   height: 100px;
 }

@@ -1,17 +1,11 @@
-import {
-  useQuery,
-  useLazyQuery
-} from "@apollo/client";
-
 function Book({book, setId}) {
-  console.log(book)
+
   return (
-    <div className="Book">
+    <li className="Book rounded">
       <div onClick={() => setId(book.id)}>
         <h1>{book.name}</h1>
       </div>
-
-    </div>
+    </li>
   );
 }
 
