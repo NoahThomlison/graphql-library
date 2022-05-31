@@ -1,3 +1,4 @@
+// component to render indiviual book
 function Book({book, setId}) {
 
   return (
