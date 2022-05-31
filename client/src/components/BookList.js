@@ -7,6 +7,7 @@ import {
 
 import {getBookQuery} from '../queries/queries'
 
+// component to render the booklist
 function BookList() {
   const [id, setId] = useState("")
   console.log(id)
