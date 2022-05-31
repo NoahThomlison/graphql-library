@@ -4,6 +4,8 @@ import {
 } from "@apollo/client";
 import {getBookDetailsQuery} from '../queries/queries'
 
+
+// function to render book details whenb book selected
 function BookDetails({id}) {
 	const { loading, error, data } = useQuery(getBookDetailsQuery, {
 		variables: { id: id }
